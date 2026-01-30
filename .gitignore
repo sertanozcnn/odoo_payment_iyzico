@@ -66,3 +66,13 @@ Thumbs.db
 # Local development
 *.log
 *.sql
+
+# --- SHOWCASE MODE ---
+# Ignore everything
+*
+# But don't ignore these:
+!.gitignore
+!README.md
+!static/
+!static/description/
+!static/description/*
