@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--
+    iyzico Payment Provider
+
+    KULLANIM:
+    Bu provider'ı kullanmak istediğiniz websiteleri seçmelisiniz.
+    Birden fazla website seçebilirsiniz ve provider sadece seçili websitelerde görünür.
+
+    ÖRNEK:
+    - Website A, B ve C'de aynı API kullanmak → A, B ve C'yi seçin
+    - Website D'de farklı API kullanmak → Yeni bir provider oluşturun ve sadece D'yi seçin
+
+    NOT: available_currency_ids ve available_country_ids BOŞ bırakılmıştır.
+    Bu, iyzico'nun TÜM para birimlerini ve TÜM ülkeleri kabul etmesi anlamına gelir.
+    Belirli para birimleri veya ülkeler için kısıtlama yapmak isterseniz,
+    provider form görünümünden manuel olarak ekleyebilirsiniz.
+    -->
+    <record id="payment_provider_iyzico" model="payment.provider">
+        <field name="name">iyzico</field>
+        <field name="code">iyzico</field>
+        <field name="image_128" type="base64" file="payment_iyzico/static/description/icon.png"/>
+        <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field name="payment_method_ids"
+               eval="[Command.set([
+                   ref('payment.payment_method_card'),
+               ])]"
+        />
+        <!-- Test modunda da published kalsın ki test edilebilsin -->
+        <field name="is_published" eval="True"/>
+        <!-- Website seçimi yapılmamış - kullanıcı seçmeli -->
+
+        <!-- Para birimi ve ülke kısıtlaması YOK - tümü kabul edilir -->
+        <!-- Belirli kısıtlamalar için form görünümünden manuel olarak ekleyin -->
+    </record>
+
+</odoo>

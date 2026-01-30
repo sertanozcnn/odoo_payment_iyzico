@@ -1,0 +1,161 @@
+/**
+ * Iyzico Payment Checkout Styling
+ * 
+ * Custom styling for iyzico payment option in checkout page.
+ * Brand color: #1E64FF (iyzico blue)
+ * 
+ * Follows Odoo 18 design patterns with clean, modern aesthetics.
+ */
+
+/* ===========================================
+   IYZICO PAYMENT CARD - BASE STYLES
+   =========================================== */
+
+/* Payment option card for iyzico */
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) {
+    border-left: 4px solid #1E64FF;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(30, 100, 255, 0.02) 0%, transparent 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle shine effect */
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"])::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(30, 100, 255, 0.03) 100%);
+    pointer-events: none;
+}
+
+/* ===========================================
+   HOVER STATES
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]):hover {
+    background: linear-gradient(135deg, rgba(30, 100, 255, 0.06) 0%, rgba(30, 100, 255, 0.02) 100%);
+    box-shadow: 0 4px 16px rgba(30, 100, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ===========================================
+   SELECTED STATE
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"] input:checked) {
+    background: linear-gradient(135deg, rgba(30, 100, 255, 0.08) 0%, rgba(30, 100, 255, 0.03) 100%);
+    border-left-width: 5px;
+    box-shadow: 0 4px 20px rgba(30, 100, 255, 0.18);
+}
+
+/* ===========================================
+   PAYMENT METHOD LABEL
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .o_payment_option_label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+
+/* ===========================================
+   RADIO BUTTON STYLING
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) input[type="radio"] {
+    accent-color: #1E64FF;
+    width: 18px;
+    height: 18px;
+}
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) input[type="radio"]:checked {
+    box-shadow: 0 0 0 3px rgba(30, 100, 255, 0.2);
+}
+
+/* ===========================================
+   PAYMENT METHOD LOGO
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .gap-1 span {
+    border-radius: 8px;
+    border: 1px solid rgba(30, 100, 255, 0.15);
+    background: white;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]):hover .gap-1 span {
+    border-color: rgba(30, 100, 255, 0.3);
+    box-shadow: 0 3px 10px rgba(30, 100, 255, 0.12);
+}
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .gap-1 span img {
+    border-radius: 4px;
+}
+
+/* ===========================================
+   SECURED BY TEXT
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) p[name="o_payment_secured_by"],
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) p[name="o_payment_secured_by_desktop"],
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) p[name="o_payment_secured_by_mobile"] {
+    color: #1E64FF;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Lock icon styling */
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .fa-lock {
+    color: #1E64FF;
+    font-size: 0.9em;
+}
+
+/* ===========================================
+   INLINE FORM CONTAINER
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) div[name="o_payment_inline_form"] {
+    border-top: 1px solid rgba(30, 100, 255, 0.1);
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 6px 6px;
+}
+
+/* ===========================================
+   TEST MODE WARNING BADGE
+   =========================================== */
+
+.o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .fa-exclamation-triangle {
+    color: #f39c12 !important;
+    font-size: 0.85rem;
+    animation: pulse-warning 2s ease-in-out infinite;
+}
+
+@keyframes pulse-warning {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* ===========================================
+   RESPONSIVE ADJUSTMENTS
+   =========================================== */
+
+@media (max-width: 576px) {
+    .o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) {
+        border-left-width: 3px;
+        border-radius: 6px;
+    }
+    
+    .o_payment_form li[name="o_payment_option"]:has([data-provider-code="iyzico"]) .o_payment_option_label {
+        font-size: 0.95rem;
+    }
+}

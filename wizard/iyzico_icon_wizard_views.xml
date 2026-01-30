@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="iyzico_icon_wizard_form" model="ir.ui.view">
+        <field name="name">iyzico.icon.wizard.form</field>
+        <field name="model">iyzico.icon.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Update Iyzico Icons">
+                <group>
+                    <field name="info" widget="text" readonly="1"/>
+                </group>
+                <div class="alert alert-info" role="alert">
+                    <p><strong>Bu işlem şunları yapacak:</strong></p>
+                    <ul>
+                        <li>Provider kanban ikonunu güncelleyecek (<code>icon.png</code>)</li>
+                        <li>Checkout sayfası ödeme yöntemi ikonunu güncelleyecek (<code>checkout_icon.png</code>)</li>
+                    </ul>
+                </div>
+                <footer>
+                    <button name="action_update_icons" 
+                            string="Görselleri Güncelle" 
+                            type="object" 
+                            class="btn-primary"/>
+                    <button string="İptal" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open wizard -->
+    <record id="action_iyzico_icon_wizard" model="ir.actions.act_window">
+        <field name="name">Update Iyzico Icons</field>
+        <field name="res_model">iyzico.icon.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
