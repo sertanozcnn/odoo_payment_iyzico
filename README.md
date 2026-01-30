@@ -9,7 +9,7 @@ Bu modül, Odoo 18 ile iyzico ödeme entegrasyonunu sağlar. Türkiye'nin önde 
 This module provides iyzico payment integration for Odoo 18. Accept secure online payments using iyzico, one of Turkey's leading payment providers.
 
 ---
-
+[Odoo Apps Store](https://apps.odoo.com/apps/modules/18.0/iyzico_odoo_payment)
 ## Özellikler / Features
 
 ### ✅ Temel Özellikler / Core Features
@@ -339,7 +339,7 @@ LGPL-3
 ## Destek / Support
 
 - **iyzico Destek**: [https://dev.iyzipay.com/tr](https://dev.iyzipay.com/tr)
-- **Odoo Community**: [https://www.odoo.com/forum](https://www.odoo.com/forum)
+- **Odoo Community**: [Odoo Apps Store](https://apps.odoo.com/apps/modules/18.0/iyzico_odoo_payment) / [Odoo Forum](https://www.odoo.com/forum)
 - **GitHub Issues**: Module repository
 
 ---
