@@ -1,3 +1,5 @@
+# Detaylar için iletişime geçiniz
+
 # iyzico Payment Provider for Odoo 18
 
 ## Genel Bakış / Overview
